@@ -1,0 +1,82 @@
+/* src/components/MessagingView/MessagingView.css */
+
+.messaging-container {
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #041626;
+}
+
+.messaging-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: #d3e3fd;
+    padding-inline: 200px;
+}
+
+.messages {
+    flex-direction: column;
+    margin-top: 100px;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+}
+
+.user-message {
+    max-width: 60%;
+    background-color: #0d2136;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-self: flex-end; /* Align user messages to the right */
+}
+
+.assistant-message {
+    max-width: 80%;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.message-input-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 60%;
+    background-color: #041626;
+}
+
+.message-input {
+    flex: 1;
+    resize: none;
+    padding: 20px;
+    border: none;
+    padding-block: 20px;
+    border-radius: 25px;
+    background-color: #0d2136;
+    color: #d3e3fd;
+}
+
+.message-input:focus {
+    outline: none;
+}
+
+.send-button {
+    background-color: #0842a0;
+    color: #d3e3fd;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-button:hover {
+    background-color: #10243a;
+}

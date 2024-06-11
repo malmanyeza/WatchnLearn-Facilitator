@@ -1,0 +1,63 @@
+/* src/components/NavBar.css */
+
+.navbar {
+    width: 200px; /* Remove quotes from width */
+    background-color: #071a2b; /* Updated navbar background */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 10px; /* Updated padding */
+}
+
+.navbar span {
+    color: #d3e3fd; /* Updated title color */
+    font-size: 1.2em;
+}
+
+.app-name {
+    font-size: 1.5em; /* Updated app name font size */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.navbar hr {
+    border: 0;
+    height: 1px;
+    background-color: #283d55;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-inline: -10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 20px;
+}
+
+.navbar ul li {
+    margin: 10px -10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #96a6be; /* Updated navigation text color */
+    font-size: 1.1em;
+    display: flex; /* Changed to flex to align icon and text */
+    align-items: center; /* Center the items vertically */
+    padding-left: 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar ul li a:hover {
+    background-color: #10243a; /* hover background color */
+    color: #d3e3fd; /* hover text color */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.navbar ul li a.selected {
+    background-color: #0842a0; /* selected button background color */
+    color: #d3e3fd; /* selected text color */
+    text-decoration: none; /* Remove underline on selection */
+}
