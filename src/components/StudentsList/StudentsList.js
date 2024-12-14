@@ -2,8 +2,11 @@
 import React from 'react';
 import Header from '../Header';
 import StudentsListTable from './StudentsListTable';
+import { useSubjectContext } from '../../hooks/SubjectDetailsContext';
 
 const StudentsList = () => {
+
+    const {myStudents} = useSubjectContext();
 
     const dummyStudents = [
         { id: 1, name: 'John Doe', studentId: 'A001' },
@@ -31,7 +34,7 @@ const StudentsList = () => {
     return (
         <div>
              <Header currentSubject="English" userName="John Doe" screenName="Students List" />
-            <StudentsListTable students={dummyStudents}/>
+            <StudentsListTable students={myStudents}/>
         </div>
     );
 };

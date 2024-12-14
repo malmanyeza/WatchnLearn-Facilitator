@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaCaretDown } from 'react-icons/fa'; // Importing FontAwesome caret down icon
+import { FaCaretDown } from 'react-icons/fa';
 import './Header.css';
+import { useSubjectContext } from '../hooks/SubjectDetailsContext';
 
-const Header = ({ currentSubject, userName, screenName }) => {
+const Header = ({ userName, screenName }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { currentSubject, setCurrentSubject, mySubjects } = useSubjectContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,31 +17,41 @@ const Header = ({ currentSubject, userName, screenName }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const subjects = ['English', 'Biology', 'Chemistry', 'Physics'];
+  const handleSubjectClick = (subject) => {
+    setCurrentSubject(subject);
+    setIsDropdownVisible(false);
+  };
 
   return (
     <div className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-content">
         <div className="subject-area">
           <div className="subject-dropdown">
-            <span>{currentSubject}</span>
-            <button className={"dropdown-icon"} onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
-              <FaCaretDown /> {/* Using the imported icon here */}
+            <span>{currentSubject ? currentSubject.subjectName : 'Loading...'}</span>
+            <button
+              className="dropdown-icon"
+              onClick={() => setIsDropdownVisible(!isDropdownVisible)}
+            >
+              <FaCaretDown />
             </button>
             {isDropdownVisible && (
               <div className="dropdown-menu">
                 <div className="dropdown-header">All subjects</div>
                 <hr />
                 <ul>
-                  {subjects.map((subject) => (
-                    <li key={subject}>{subject}</li>
+                  {mySubjects.map((subject) => (
+                    <li
+                      key={subject.id} // Assuming each subject has a unique 'id'
+                      onClick={() => handleSubjectClick(subject)}
+                    >
+                      {subject.subjectName}
+                    </li>
                   ))}
                 </ul>
               </div>
             )}
-            <span className={'screen-name'} >{screenName}</span>
+            <span className="screen-name">{screenName}</span>
           </div>
-          
         </div>
         <div className="avatar">{userName.charAt(0).toUpperCase()}</div>
       </div>

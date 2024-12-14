@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaEllipsisV } from 'react-icons/fa'; // Importing FontAwesome ellipsis vertical icon
 import './StudentsListTable.css';
 
@@ -12,8 +12,11 @@ const StudentListTable = ({ students }) => {
   };
 
   const filteredStudents = students.filter(student =>
-    student.name.toLowerCase().includes(searchTerm.toLowerCase())
+    (student.studentName || '').toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  
+  
 
   const handleDeleteClass = () => {
     // Implement your delete class logic here
@@ -86,8 +89,8 @@ const StudentListTable = ({ students }) => {
           </thead>
           <tbody>
             {filteredStudents.map((student, index) => (
-              <tr key={student.id} className={`student-item ${showActions === index ? 'show-actions' : ''}`}>
-                <td>{student.name}</td>
+              <tr key={student.studentId} className={`student-item ${showActions === index ? 'show-actions' : ''}`}>
+                <td>{student.studentName}</td>
                 <td>{student.studentId}</td>
                 <td className="student-actions">
                   <div className="ellipsis-icon-container" onClick={() => handleActionClick(index)}>
