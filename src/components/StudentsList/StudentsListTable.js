@@ -63,7 +63,7 @@ const StudentListTable = ({ students }) => {
               Add Student
             </button>
             <div className="header-menu-options">
-              <div className="ellipsis-icon-container" onClick={handleHeaderMenuClick}>
+              <div className="ellipsis-icon-container-header" onClick={handleHeaderMenuClick}>
                 <FaEllipsisV className="ellipsis-icon" />
               </div>
               {showHeaderMenu && (
@@ -81,7 +81,7 @@ const StudentListTable = ({ students }) => {
             <tr>
               <th>Name</th>
               <th>Student ID</th>
-              <th>Action</th>
+              <th >Action</th>
             </tr>
           </thead>
           <tbody>

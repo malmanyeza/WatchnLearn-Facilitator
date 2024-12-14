@@ -1,0 +1,91 @@
+.marks-entry-container {
+    background-color: #041626;
+    color: #d3e3fd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    margin-top: 100px;
+    margin-inline: 200px;
+    border: 1px solid #283d55; /* Added thin border */
+}
+
+.data-table-container {
+    margin-top: 10px;
+}
+
+.header-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total-marks-input,
+.assignment-type-input,
+.subject-topic-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d2136;
+    color: #d3e3fd;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.assignment-type-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d2136;
+    color: #d3e3fd;
+    width: 30%;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.students-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.students-data-table th, .students-data-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.students-data-table th {
+    background-color: #0d2136;
+}
+
+.students-data-table th, .students-data-table td {
+    border-bottom: 1px solid #283d55;
+}
+
+.student-marks-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d2136;
+    color: #d3e3fd;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.save-action-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.save-marks-action-button {
+    padding: 10px 15px;
+    background-color: #0842a0;
+    color: #d3e3fd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-marks-action-button:hover {
+    background-color: #10243a;
+}
